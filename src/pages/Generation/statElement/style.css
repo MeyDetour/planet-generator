@@ -1,0 +1,65 @@
+.statElement {
+  width: 20%;
+  height: fit-content;
+  position: relative;
+  background: #8080802e;
+  border-radius: 10px;
+  padding: 25px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  > div {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: end;
+    .color{
+
+            width: 31px;
+            border-radius: 21px;
+            box-sizing: border-box;
+            border: 3px solid #ffffff85;
+            height: 50px;
+        
+    }
+  }
+  span {
+    text-transform: uppercase;
+  }
+  .value { 
+    line-height: 20px;
+    font-size: 28px;
+    font-family: "liberation-mono-regular", monospace !important;
+  }
+  .label,
+  .right {
+    color: #ffffffb5;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 16px;
+    text-transform: none !important;
+    letter-spacing: 0.6px;
+  }
+  .progressBar {
+    position: absolute;
+    left: 0;
+    bottom: 0; 
+    opacity: 1;
+    height: 5px;
+    border-radius: 10px;
+   /* animation: progressBarAnim 1s 2s linear; */
+  }
+}
+
+
+@keyframes progressBarAnim {
+  0%{
+    width: 0%;
+    opacity: 1;
+  }
+  100%{
+    width: 100%;
+    opacity: 1;
+  }
+    
+}

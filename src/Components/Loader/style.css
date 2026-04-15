@@ -1,0 +1,35 @@
+.loader {  
+  width: 80px;
+  aspect-ratio: 1/1;
+  animation: rotation 1.5s linear infinite;
+
+  .line {
+    width: 100%;
+    height: 100%;
+    border: 5px solid;
+    border-color: aliceblue;
+    border-radius: 50%;
+    box-sizing: border-box;
+    position: relative;
+    .block {
+      background: #101010;
+
+            width: 126px;
+            height: 35px;
+            position: absolute;
+            top: 1%;
+            left: 38%;
+            transform: rotate(27deg);
+    }
+  }
+}
+
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
