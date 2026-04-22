@@ -2,7 +2,7 @@ import { useLoader } from "@react-three/fiber";
 import { TextureLoader } from "three";
 import * as THREE from "three";
 export default function Stars() {
-  const texture = useLoader(TextureLoader, "/src/assets/texture/galaxy1.png");
+  const texture = useLoader(TextureLoader, "/texture/galaxy1.png");
 
   return (
     <mesh>
