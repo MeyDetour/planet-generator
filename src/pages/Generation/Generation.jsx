@@ -81,7 +81,7 @@ export default function Generation() {
     function fetchData() {
       const url = "https://www.cjglitter.com/rand_name/api";
       fetch(url, {
-        method: "OPTIONS",
+        method: "GET",
         headers: {
           "Content-Type": "application/json",
         },
