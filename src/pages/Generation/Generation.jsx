@@ -80,7 +80,7 @@ export default function Generation() {
   useEffect(() => {
     function fetchData() {
       const url =
-        "https://cors-anywhere.herokuapp.com/https://www.cjglitter.com/rand_name/api";
+        "https://www.cjglitter.com/rand_name/api";
       fetch(url, {
         method: "GET",
         headers: {
