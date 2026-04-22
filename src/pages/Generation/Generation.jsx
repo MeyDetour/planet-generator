@@ -79,7 +79,7 @@ export default function Generation() {
 
   useEffect(() => {
     function fetchData() {
-      const url = "https://www.cjglitter.com/rand_name/api";
+      const url = "/api-externe";
       fetch(url, {
         method: "GET",
         headers: {
