@@ -4,7 +4,7 @@ import * as THREE from "three";
 import { useMemo , useRef} from "react";
 
 export default function Satellites({ planetRef, rayon }) {
-  const fbx = useFBX("/src/assets/texture/Satellite(With textures).fbx");
+  const fbx = useFBX("/texture/Satellite(With textures).fbx");
   const scaleProportionnel = rayon * 0.0002;
   const orbitGroupRef = useRef();
   const pointsAFaire = useMemo(() => {
