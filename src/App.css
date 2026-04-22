@@ -9,6 +9,10 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
+  overflow: hidden;
+}
+#root{
+  overflow: hidden;
 }
 h1 {
   font-family: "Orbitron", sans-serif;
