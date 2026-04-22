@@ -4,8 +4,10 @@ import { useState, useEffect, useRef, useMemo } from "react";
 import { Line } from "@react-three/drei";
 import { or } from "three/tsl";
 
-export default function Experience({ getParams, soleilRef,planetRef , sunReady }) {
- 
+export default function Experience({ getParams, getParamsObject, soleilRef, planetRef , sunReady }) {
+  
+  const vitesse = getParams("Vitesse d'orbite autour du soleil") / 100;
+const hasOrbite = getParamsObject("Orbite")?.options[getParams('Orbite')] === "Oui";
   let rayon = getParams("Taille (rayon)");
 
   useEffect(() => {
@@ -31,7 +33,8 @@ export default function Experience({ getParams, soleilRef,planetRef , sunReady }
       sRayon === undefined ||
       sXposition === undefined ||
       soleilRef.current === undefined ||
-      !sunReady
+      !sunReady || 
+      !hasOrbite
     ) {
       return { a: 0, b: 0, focalOffset: 0, orbitPoints: [] };
     }
@@ -54,19 +57,12 @@ export default function Experience({ getParams, soleilRef,planetRef , sunReady }
   }, [sRayon, sXposition, soleilRef.current, sunReady]);
 
   useFrame((state) => {
-    if (!planetRef.current || !a || !b) return;
-    const time = state.clock.elapsedTime * 0.1
+    if (!planetRef.current || !a || !b || !hasOrbite) return;
+    const time = state.clock.elapsedTime * vitesse
     planetRef.current.rotation.y += 0.01;
     planetRef.current.position.x = Math.cos(time) * a;
     planetRef.current.position.z = Math.sin(time) * b;
-  });
-  console.log("orbit : " + orbitPoints);
-  console.log("soleil ref :" + soleilRef);
-  console.log("planet ref :" + planetRef);
-  console.log("sRayon :" + sRayon);
-  console.log("soleil x" + sXposition);
-
-  console.log("rayon :" + rayon);
+  }); 
   return (
     <>
       <group>
@@ -83,7 +79,7 @@ export default function Experience({ getParams, soleilRef,planetRef , sunReady }
             wireframe={false}
           />
         </mesh>
-        {true && orbitPoints && orbitPoints.length > 0 && (
+        {hasOrbite && orbitPoints && orbitPoints.length > 0 && (
           <Line
             points={orbitPoints ?? []} // Les points calculés plus haut
             color="#ffffff1c" // Couleur de la ligne

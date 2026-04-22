@@ -22,6 +22,8 @@ export default function Planet() {
 
   function getParams(label) {
     return parameters.find((param) => param.label === label)?.value;
+  } function getParamsObject(label) {
+    return parameters.find((param) => param.label === label);
   }
 
   useEffect(() => {
@@ -54,6 +56,7 @@ export default function Planet() {
           soleilRef={soleilRef}
           planetRef={planetRef}
           getParams={getParams}
+          getParamsObject={getParamsObject}
         />
         <Stars></Stars>
 
