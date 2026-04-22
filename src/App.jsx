@@ -1,7 +1,7 @@
 import { useState } from 'react'  
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import Generation from './pages/Generation/Generation.jsx'
-import Planet from './pages/Planet/Planet.jsx'
+import Generation from './pages/Generation/Generation.jsx' 
+import Composition from './pages/Planet/Composition.jsx'
 import './App.css'
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
        
       <Routes>
         <Route path="/" element={<Generation />} />
-        <Route path="/planet" element={<Planet />} /> 
+        <Route path="/planet" element={<Composition />} /> 
       </Routes>
     </BrowserRouter>
   )

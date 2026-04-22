@@ -1,0 +1,70 @@
+.regenerateButton {
+  text-decoration: none;
+  width: fit-content;
+  cursor: pointer;
+
+  outline: 0;
+  background: transparent;
+
+  border: 2px solid;
+  border-radius: 15px;
+  padding: 8px 19px;
+  font-size: 21px;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  align-items: center;
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  z-index: 5;
+}
+.statPanel {
+  position: absolute;
+  bottom: 102px;
+  left: 20px;
+  z-index: 5;
+  padding: 24px;
+  padding-bottom: 48px;
+  border-radius: 22px;
+  border: 1px solid;
+  gap: 21px;
+  display: flex;
+  flex-direction: column;
+  h1 {
+    font-size: 30px;
+  }
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    .stat {
+      width: 100%;
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      span {
+        font-size: 15px;
+      }
+      span:first-child {
+        color: silver;
+      }
+      .proportion {
+  position: absolute;
+  bottom: -11px;
+  width: 100%;
+  left: 0;
+  height: 7px;
+  transform: translateY(100%);
+  background: #232323;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  overflow: hidden;
+      }
+    }
+  }
+}

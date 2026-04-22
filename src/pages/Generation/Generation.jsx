@@ -43,7 +43,7 @@ export default function Generation() {
       max: 100,
       right: "% surface",
     },
-    { label: "Taux de cratères", value: null, min: 0, max: 100, right: "%" },
+    { label: "Taux de cratères", value: null, min: 0, max: 50, right: "%" },
     {
       label: "Vitesse d'orbite autour du soleil",
       value: null,
@@ -51,12 +51,12 @@ export default function Generation() {
       max: 60,
       right: "km/s",
     },
-    { label: "Toxicité", value: null, min: 0, max: 100, right: "indice" },
+    { label: "Probabilité de survie", value: null, min: 0, max: 100, right: "%" },
     { label: "Texture", value: null, min: 0, max: 100, right: "indice" },
    {
       label: "Orbite",
       value: null,
-      options: ["Oui", "Non"],
+      options: ["Oui", "Non","Non","Non","Non"],
       right: "",
     },
     { label: "Végétation", value: null, min: 0, max: 100, right: "%" },
@@ -91,6 +91,9 @@ export default function Generation() {
         .then((data) => {
           setResult(data.results[0].name);
           if (stats) {
+            localStorage.setItem("planetName", data.results[0].name.first_name);
+            localStorage.setItem("planetSatellites", getSatelliteNumber());
+
             saveParams();
           }
           setTimeout(() => setButtonVisible(true), 5000);
@@ -101,6 +104,17 @@ export default function Generation() {
     fetchData();
   }, []);
 
+  function getSatelliteNumber(){
+    const rand = Math.random();
+    // 30% de chance d'avoir des sattelites
+    if (rand < 1) {
+      // entre 1 et 5 sattelites
+      return Math.floor(Math.random() * 5) + 1;
+    }; 
+
+    // 70% de n'avoir aucun sattelire
+    return 0;
+  }
   function saveParams(newObj) {
     console.log(newObj);
     console.log(stats);

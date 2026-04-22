@@ -31,8 +31,9 @@ export default function Sun({ getParams, soleilRef , setSunReady}) {
         <pointLight
           color={"#FDB813"}
           intensity={2000000}
-          distance={10000000000}
+          distance={1000}
         />
+        <ambientLight color={"white"} intensity={0.8} ref={lightRef} />
         <meshStandardMaterial
           emissive={hdrColor}
           emissiveIntensity={1}
