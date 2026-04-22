@@ -128,9 +128,9 @@ export default function Planet({
 // types options: ["Liquide", "Glace", "Vapeur", "Aucune"]
 // type = 1 -> Glace
 export function ReliefTexture(type) {
-  const file1 = "/textures/planetHeightMap.png";
-  const file2 = "/textures/grand_canyon_heightmap_sm.png";
-    const texture = useLoader(THREE.TextureLoader, type==1 ? (Math.random() < 0.5 ? file1 : file2) : file2);
+  const file1 = "../src/assets/texture/planetHeightMap.png";
+  const file2 = "../src/assets/texture/grand_canyon_heightmap_sm.png";
+  const texture = useLoader(THREE.TextureLoader, type==1 ? (Math.random() < 0.5 ? file1 : file2) : file2);
   texture.wrapS = THREE.RepeatWrapping;
   texture.wrapT = THREE.RepeatWrapping;
   return texture;
